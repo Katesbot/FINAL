@@ -37,7 +37,7 @@
         text: myWords,
         aspect: 'spiral',
         colorType: 'palette',
-        ignore: ['&', 'and', 'very', 'is', 'wine', 'often', 'with', 'thats', 'usually'],
+        ignore: ['&', 'and', 'very', 'is', 'wine', 'often', 'with', 'thats', 'usually','Usually'],
         maxItems: 50,
         minLength: '4px',
         palette: ["#e09f7d","#e87e6f","#ef5d60","#ec4067","#c62d72","#9e1a7b","#761a68","#4d1955","#311847","#1f1528"],

@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 
 app = Flask(__name__)
 
-connection_string = "postgres:postgres@localhost:5432/MoreWineeeeeee"
+connection_string = "postgres:postgres@localhost:5432/MoreWineeeee"
 engine = create_engine(f'postgresql://{connection_string}')
 conn = engine.connect()
 

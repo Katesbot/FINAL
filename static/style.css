@@ -1,17 +1,14 @@
 
 body {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#efc5ca+0,d24b5a+98,f18e99+100 */
-background: #efc5ca; /* Old browsers */
-background: -moz-linear-gradient(top,  #efc5ca 0%, #d24b5a 98%, #f18e99 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #efc5ca 0%,#d24b5a 98%,#f18e99 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #efc5ca 0%,#d24b5a 98%,#f18e99 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efc5ca', endColorstr='#f18e99',GradientType=0 ); /* IE6-9 */
-
-
+    background-image: linear-gradient(#722f37,#f5ebeb);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
+}
     
-    }
-    
-
 
     
     
