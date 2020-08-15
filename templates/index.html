@@ -10,49 +10,46 @@
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
   <title>More Wineeeee</title>
   <script type="text/javascript">
-    var dataNoodles = `{{ WhiteWine }}`
+    var dataWine = `{{ WhiteWine }}`
   </script>
  
   
 </head>
 <body>
 
-  <div class="row" id="titles">
+  <div class="row" id="wineChooser"> 
+    <div class="col-md-12" style="text-align: center"></div>
+  </div>
+
+  <div class="row" id="wineEntry">
     <div class="col-md-12" style="text-align: center">
       <div class="well justify-content-center" style="text-align: center"></div>
         <form class="form-inline justify-content-center text-center" style="text-align: center">
           <div class="form-group" style="text-align: center">
             <input type="text" class="form-control" id="wineInput" placeholder="Red-White-Rose">
           </div>
-          <button id="submit" type="submit" class="btn btn-default" >WINE ME BB</button>
+          <button id="submit" type="submit" class="btn btn-default" >WINE ME</button>
         </form>
       </div>
     </div>
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-md-10 justify-content-center" style="text-align: center">
+    <div class="col-md-3"  style="text-align: center">
+      <h3><b>Alcohol Content</b></h3>
+      <div id = "alcoholContent" style="text-align: center"></div>
+    </div>
+    <div class="col-md-6 justify-content-center" style="text-align: center">
       <h4><b></b></h4>
       <div id = "wineWords" style="text-align: center" class="chart--container">
         <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref"></a>
       </div>
     </div>
+    <div class="col-md-3"  style="text-align: center">
+      <div id = "wineGif" style="text-align: center"></div>
+      <img src="https://media.giphy.com/media/uYcuStWfBtHnW/giphy.gif" style="width: 90%; padding-top: 18%">
+    </div>
   </div>  
-
-  <!-- <div class="row" id="graphtitles">
-    <div class="col-md-4"  style="text-align: center">
-      <h3><b>Distribution of Ratings</b></h3>
-      <div id = "distRate" style="text-align: center"></div>
-    </div>
-    <div class="col-md-4"  style="text-align: center">
-      <h3><b>Top 10</b></h3>
-      <div id = "topTen" style="text-align: center"></div>
-    </div>
-    <div class="col-md-4"  style="text-align: center">
-      <h3><b>Consistency of Ratings</b></h3>
-      <div id = "violinRate" style="text-align: center"></div>
-    </div>
-  </div> -->
 
   <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>

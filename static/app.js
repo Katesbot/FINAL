@@ -37,10 +37,10 @@
         text: myWords,
         aspect: 'spiral',
         colorType: 'palette',
-        ignore: ['&', 'and', 'very', 'is', 'wine', 'often', 'with', 'thats', 'usually','Usually'],
+        ignore: ['&', 'and', 'very', 'is', 'wine', 'often', 'with', 'thats', 'usually','Usually','than','of','wines','wine', 'make'],
         maxItems: 50,
         minLength: '4px',
-        palette: ["#e09f7d","#e87e6f","#ef5d60","#ec4067","#c62d72","#9e1a7b","#761a68","#4d1955","#311847","#1f1528"],
+        palette: ["#fae0de","#fcd0cc","#f7bab5","#96433c","#99382f","#9e1a7b","#b51f12","#a61307","#c41406","#ab271d"],
         rotate: true,
         style: {
           tooltip: {
@@ -68,7 +68,7 @@
       }
     };
 
-
+    //create a guage with alcohol content - range is for all wines, with buffer for red/white/rose - add in types of wine?
         
     // RENDER CHARTS
     // -----------------------------
