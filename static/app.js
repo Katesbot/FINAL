@@ -4,6 +4,11 @@
     console.log(response);
   })
 
+  // const wineurl2 = "/data2";
+  // d3.json(wineurl2).then(function(response) {
+  //   console.log(response);
+  // })
+
 // Import Data
     function handleSubmit() {
       d3.event.preventDefault();
@@ -22,6 +27,15 @@
         var description = wineData.map(function(x) {
           return x.Description;
         });
+
+      // d3.json(wineurl2).then(function(dataWine) {
+  
+      //   var wineData2 = dataWine.filter(s => s.Type === wineChosen);
+      //   console.log(wineData2);
+    
+      //   var content = wineData2.map(function(x) {
+      //     return x.Content;
+      //   });
     
     var wineDescriptions = []
     // Iterate through each  object
@@ -69,13 +83,38 @@
     };
 
     //create a guage with alcohol content - range is for all wines, with buffer for red/white/rose - add in types of wine?
-        
+    var wineContent = [{"White": .1},{"Red": .14},{"Rose": .12}]
+
+    var data = [
+      {
+        domain: { x: [0, 1], y: [0, 1] },
+        value: .1,
+        type: "indicator",
+        mode: "gauge+number+delta",
+        gauge: {
+          axis: { range: [null, .15] },
+          steps: [
+            { range: [.07, .12], color: "#96433c" }
+          ]
+        }
+      }
+    ];
+
+    var layout = {
+      plot_bgcolor:"rgba(0,0,0,0)",
+      paper_bgcolor:"rgba(0,0,0,0)",
+      title: {
+        text:'Alcohol Content',
+        font: {
+          family: 'Courier New, monospace',
+          size: 24
+        }
+      }
+    }
+    
     // RENDER CHARTS
     // -----------------------------
-    // Plotly.newPlot('distRate', data15);
-    // Plotly.newPlot("topTen", data10);
-    // Plotly.newPlot("violinRate", data11, layout11);
-    // Plotly.newPlot("perStyle", data12);
+    Plotly.newPlot('alcoholContent', data, layout);
     zingchart.render({
       id: 'wineWords',
       data: chartConfig
