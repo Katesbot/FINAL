@@ -4,11 +4,6 @@
     console.log(response);
   })
 
-  // const wineurl2 = "/data2";
-  // d3.json(wineurl2).then(function(response) {
-  //   console.log(response);
-  // })
-
 // Import Data
     function handleSubmit() {
       d3.event.preventDefault();
@@ -27,16 +22,7 @@
         var description = wineData.map(function(x) {
           return x.Description;
         });
-
-      // d3.json(wineurl2).then(function(dataWine) {
-  
-      //   var wineData2 = dataWine.filter(s => s.Type === wineChosen);
-      //   console.log(wineData2);
-    
-      //   var content = wineData2.map(function(x) {
-      //     return x.Content;
-      //   });
-    
+   
     var wineDescriptions = []
     // Iterate through each  object
     for (var i = 0; i < description.length; i++) {
@@ -83,12 +69,24 @@
     };
 
     //create a guage with alcohol content - range is for all wines, with buffer for red/white/rose - add in types of wine?
-    var wineContent = [{"White": .1},{"Red": .14},{"Rose": .12}]
+    var wineContent = [{wine: "White", content: .1},{wine: "Red", content: .14},{wine: "Rose", content: .7} ];
+
+    var values = [];
+
+    var content = wineContent.filter(s => s.wine === wineChosen);
+  
+    content.forEach((x) => {
+      Object.entries(x).forEach(([key, value]) => {
+        if (key === "content") {
+          values.push(value);
+        }
+       });
+    });
 
     var data = [
       {
         domain: { x: [0, 1], y: [0, 1] },
-        value: .1,
+        value: values[1],
         type: "indicator",
         mode: "gauge+number+delta",
         gauge: {
