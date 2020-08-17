@@ -33,6 +33,10 @@
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"]; 
     let chartConfig = {
       type: 'wordcloud',
+      backgroundColor:'none',
+      plotarea: {
+        backgroundColor: 'transparent'
+      },
       options: {
         text: myWords,
         aspect: 'spiral',
