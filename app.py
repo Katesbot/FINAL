@@ -26,20 +26,20 @@ def data():
     
     return jsonify(WineDescriptions)
 
-# @app.route("/data2")
-# def data():
-#     winecontentresults = conn.execute("SELECT * FROM winecontent")
+@app.route("/data2")
+def data2():
+    winecontentresults = conn.execute("SELECT * FROM winecontent")
 
-#     WineContent = []
-#     for result in winecontentresults:
-#         WineContent_dict = {}
-#         WineContent_dict["Type"] = result[1]
-#         WineContent_dict["Content"] = result[2]
-#         WineContent_dict["Low"] = result[3]
-#         WineContent_dict["High"] = result[4]
-#         WineContent.append(WineContent_dict)
+    WineContent = []
+    for result in winecontentresults:
+        WineContent_dict = {}
+        WineContent_dict["Type"] = result[1]
+        WineContent_dict["Content"] = result[2]
+        WineContent_dict["Low"] = result[3]
+        WineContent_dict["High"] = result[4]
+        WineContent.append(WineContent_dict)
     
-#     return jsonify(WineContent)
+    return jsonify(WineContent)
 
 if __name__ == "__main__":
     app.run(debug=True)

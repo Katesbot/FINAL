@@ -3,6 +3,10 @@
   d3.json(wineurl).then(function(response) {
     console.log(response);
   })
+  const wineurl2 = "/data2";
+  d3.json(wineurl2).then(function(response) {
+    console.log(response);
+  })
 
 // Import Data
     function handleSubmit() {
