@@ -18,18 +18,168 @@
 <body>
 
   <div class="row" id="wineChooser"> 
-    <div class="col-md-1" style="text-align: center"></div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gender</button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Male</a>
-          <a class="dropdown-item" href="#">Female</a>
-          <a class="dropdown-item" href="#">Non-Binery</a>
-          <a class="dropdown-item" href="#">Other</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
+  <div class="col-md-4" style="text-align: center">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose your Gender</option>
+        <option value="1">Female</option>
+        <option value="2">Male</option>
+        <option value="3">Non-Binary</option>
+        <option value="4">Other/Prefer not to say</option>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Ethnicity</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose your Ethnicity</option>
+        <option value="1">White/Caucasian</option>
+        <option value="2">Latino or Hispanic</option>
+        <option value="3">Black or African-American</option>
+        <option value="6">Asian</option>
+        <option value="5">Two or More</option>
+        <option value="4">Other/Unknown</option>
+      </select>
+    </div>
+    
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Home Location</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">United States of America</option>
+        <option value="3">North America/Central America (excluding USA)</option>
+        <option value="2">Europe</option>
+        <option value="5">Australia/New Zealand</option>
+        <option value="6">Asia</option>
+        <option value="4">Other/Prefer not to say</option>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Education</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="7">Some High School</option>
+        <option value="4">High School Diploma or equivalent</option>
+        <option value="1">Trade School</option>
+        <option value="2">Bachelor's Degree</option>
+        <option value="3">Master's Degree</option>
+        <option value="5">Ph.D. or higher</option>
+        <option value="6">Other/Prefer not to say</option>
+      </select>
+    </div>
+  </div>
+    <div class="col-md-4" style="text-align: center">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Marital Status</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option value="1">Single (Never Married)</option>
+          <option value="2">Married</option>
+          <option value="3">Divorced</option>
+          <option value="4">Other/Prefer not to say</option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Chocolate</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option value="1">Dark Chocolate</option>
+          <option value="2">Milk Chocolate</option>
+          <option value="3">White Chocolate</option>
+          <option value="4">I do not/can not eat chocolate</option>
+        </select>
+      </div>
+      
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Cheese</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option value="1">Firm/Semi-firm (Cheddar, Gouda, Parmesan)</option>
+          <option value="2">Soft (Brie, Camembert, Munster)</option>
+          <option value="3">Blue-veined (Roquefort, Gorgonzola, Bleu)</option>
+          <option value="3">White Chocolate</option>
+          <option value="4">I don't eat cheese</option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Alcohol</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option value="1">Whiskey/Scotch</option>
+          <option value="2">Vodka</option>
+          <option value="3">Tequila</option>
+          <option value="4">Beer</option>
+        </select>
+      </div>
+    </div>
+      <div class="col-md-4" style="text-align: center">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Coffee/Tea</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Tea/coffee with a little milk &/or cream</option>
+            <option value="4">Milk &/or cream with a little tea/coffee</option>
+            <option value="2">Black (with nothing added)</option>
+            <option value="3">I do not drink coffee or tea</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Candy</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Sour (Sour patch kids, Warheads, Lemonheads)</option>
+            <option value="2">Fruity (Skittles, Starburst, Jolly Ranchers)</option>
+            <option value="4">Candy Bar (Snicker, Milky way, Twix)</option>
+            <option value="3">I do not eat candy</option>
+          </select>
+        </div>
+        
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Scent</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Citrus, Floral, Herbal</option>
+            <option value="2">Wood, Tobacco, Musk</option>
+            <option value="3">Clean Linen,  Fresh Air, Seaside</option>
+            <option value="4">Cinnamon, Baked Goods, Frosting</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Salad Dressing</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Vinegar/Vinaigrettes (Balsamic, Oil & Vinegar, Italian)</option>
+            <option value="2">Sweet/Herbal/Tangy (Thousand Island, Green Goddess, French)</option>
+            <option value="3">Cream Based (Ranch, Blue cheese, Ceaser)</option>
+            <option value="4">I do not use dressing/eat salads</option>
+          </select>
         </div>
       </div>
+    </div>
   </div>
 
   <div class="row" id="wineEntry">

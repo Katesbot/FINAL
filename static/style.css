@@ -9,6 +9,10 @@ body {
     background-attachment: fixed;
 }
 
+.btn-group::after{
+    overflow:visible;
+    zoom:1.0;
+    }
     
 
     
