@@ -16,14 +16,16 @@
   
 </head>
 <body>
-
-  <div class="row" id="wineChooser"> 
+<div class="container-fluid" id="form-container">
+  <h2>Choose your responses below to find out if Red, White, or Rose is the wine for you!</h2>
+<form>
+  <div class="form-group row" id="wineChooser"> 
   <div class="col-md-4" style="text-align: center">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+        <label class="input-group-text" for="genderSelect">Gender</label>
       </div>
-      <select class="custom-select" id="inputGroupSelect01">
+      <select class="custom-select" id="genderSelect">
         <option selected>Choose your Gender</option>
         <option value="1">Female</option>
         <option value="2">Male</option>
@@ -33,9 +35,9 @@
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Ethnicity</label>
+        <label class="input-group-text" for="ethnicitySelect">Ethnicity</label>
       </div>
-      <select class="custom-select" id="inputGroupSelect01">
+      <select class="custom-select" id="ethnicitySelect">
         <option selected>Choose your Ethnicity</option>
         <option value="1">White/Caucasian</option>
         <option value="2">Latino or Hispanic</option>
@@ -48,9 +50,9 @@
     
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Home Location</label>
+        <label class="input-group-text" for="selectLocation">Home Location</label>
       </div>
-      <select class="custom-select" id="inputGroupSelect01">
+      <select class="custom-select" id="selectLocation">
         <option selected>Choose...</option>
         <option value="1">United States of America</option>
         <option value="3">North America/Central America (excluding USA)</option>
@@ -62,9 +64,9 @@
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Education</label>
+        <label class="input-group-text" for="selectEducation">Education</label>
       </div>
-      <select class="custom-select" id="inputGroupSelect01">
+      <select class="custom-select" id="selectEducation">
         <option selected>Choose...</option>
         <option value="7">Some High School</option>
         <option value="4">High School Diploma or equivalent</option>
@@ -79,9 +81,9 @@
     <div class="col-md-4" style="text-align: center">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Marital Status</label>
+          <label class="input-group-text" for="maritalSelect">Marital Status</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" id="maritalSelect">
           <option selected>Choose...</option>
           <option value="1">Single (Never Married)</option>
           <option value="2">Married</option>
@@ -91,9 +93,9 @@
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Chocolate</label>
+          <label class="input-group-text" for="selectChocolate">Chocolate</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" id="selectChocolate">
           <option selected>Choose...</option>
           <option value="1">Dark Chocolate</option>
           <option value="2">Milk Chocolate</option>
@@ -104,9 +106,9 @@
       
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Cheese</label>
+          <label class="input-group-text" for="selectCheeese">Cheese</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" id="selectCheeese">
           <option selected>Choose...</option>
           <option value="1">Firm/Semi-firm (Cheddar, Gouda, Parmesan)</option>
           <option value="2">Soft (Brie, Camembert, Munster)</option>
@@ -117,9 +119,9 @@
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Alcohol</label>
+          <label class="input-group-text" for="selectAlcohol">Alcohol</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" id="selectAlcohol">
           <option selected>Choose...</option>
           <option value="1">Whiskey/Scotch</option>
           <option value="2">Vodka</option>
@@ -131,9 +133,9 @@
       <div class="col-md-4" style="text-align: center">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Coffee/Tea</label>
+            <label class="input-group-text" for="selectCoffee">Coffee/Tea</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="selectCoffee">
             <option selected>Choose...</option>
             <option value="1">Tea/coffee with a little milk &/or cream</option>
             <option value="4">Milk &/or cream with a little tea/coffee</option>
@@ -143,9 +145,9 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Candy</label>
+            <label class="input-group-text" for="selectCandy">Candy</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="selectCandy">
             <option selected>Choose...</option>
             <option value="1">Sour (Sour patch kids, Warheads, Lemonheads)</option>
             <option value="2">Fruity (Skittles, Starburst, Jolly Ranchers)</option>
@@ -156,9 +158,9 @@
         
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Scent</label>
+            <label class="input-group-text" for="selectScent">Scent</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="selectScent">
             <option selected>Choose...</option>
             <option value="1">Citrus, Floral, Herbal</option>
             <option value="2">Wood, Tobacco, Musk</option>
@@ -166,11 +168,11 @@
             <option value="4">Cinnamon, Baked Goods, Frosting</option>
           </select>
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" id="salad-dressing">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Salad Dressing</label>
+            <label class="input-group-text" for="selectDressing">Salad Dressing</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="selectDressing">
             <option selected>Choose...</option>
             <option value="1">Vinegar/Vinaigrettes (Balsamic, Oil & Vinegar, Italian)</option>
             <option value="2">Sweet/Herbal/Tangy (Thousand Island, Green Goddess, French)</option>
@@ -180,7 +182,12 @@
         </div>
       </div>
     </div>
+    <button id="submit-form" type="submit" class="btn btn-dark" >Form Submit</button>
   </div>
+</form>
+</div>
+
+
 
   <div class="row" id="wineEntry">
     <div class="col-md-12" style="text-align: center">

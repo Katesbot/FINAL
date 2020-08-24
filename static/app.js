@@ -16,6 +16,28 @@
       d3.select("#wineInput").node().value = "";
       buildPlot(wineChosen);
     }
+    function handleFormSubmit() {
+      d3.event.preventDefault();
+      var responsearray = [];
+      var genderChosen = d3.select("#genderSelect").node().value;
+      var ehtnicityChosen = d3.select("#ethnicitySelect").node().value;
+      var loctionChosen = d3.select("#selectLocation").node().value;
+      var educationChosen = d3.select("#selectEducation").node().value;
+      var maritalChosen = d3.select("#maritalSelect").node().value;
+      var chocolateChosen = d3.select("#selectChocolate").node().value;
+      var cheeseChosen = d3.select("#selectCheeese").node().value;
+      var alcoholChosen = d3.select("#selectAlcohol").node().value;
+      var coffeeChosen = d3.select("#selectCoffee").node().value;
+      var candyChosen = d3.select("#selectCandy").node().value;
+      var scentChosen = d3.select("#selectScent").node().value;
+      var dressingChosen = d3.select("#selectDressing").node().value;
+      var responsearray = [genderChosen, ehtnicityChosen, loctionChosen, 
+        educationChosen, maritalChosen, chocolateChosen, cheeseChosen, 
+        alcoholChosen, coffeeChosen, candyChosen, scentChosen, dressingChosen];
+      console.log(responsearray);
+    }
+    
+    
     
     function buildPlot(wineChosen) {
       d3.json(wineurl).then(function(dataWine) {
@@ -129,3 +151,4 @@
   );
 }
 d3.select("#submit").on("click", handleSubmit);
+d3.select("#submit-form").on("click", handleFormSubmit);
