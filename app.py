@@ -1,12 +1,15 @@
 from flask import Flask, render_template, redirect, jsonify, request
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+import pickle
 
 app = Flask(__name__)
 
-connection_string = "postgres:Mktiger2!@localhost:5432/MoreWineeeee"
+connection_string = "postgres:postgres@localhost:5432/MoreWineeeee"
 engine = create_engine(f'postgresql://{connection_string}')
 conn = engine.connect()
+
+wine_model = pickle.load(open('wine_LOGmodel.sav', "rb"))
 
 @app.route("/")
 def index():
@@ -40,6 +43,19 @@ def data2():
         WineContent.append(WineContent_dict)
     
     return jsonify(WineContent)
+
+@app.route('/user_answer', methods=['POST'])
+def get_answers():
+    userAnswers = []
+    if request.method == 'POST':
+        answers = request.get_json()
+        for answer in answers["responses"]:
+            userAnswers.append(int(answer))
+
+        jsonResult = jsonify(userAnswers)
+        result = wine_model.predict(jsonResult)
+        return result
+
 
 if __name__ == "__main__":
     app.run(debug=True)

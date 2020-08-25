@@ -35,6 +35,14 @@
         educationChosen, maritalChosen, chocolateChosen, cheeseChosen, 
         alcoholChosen, coffeeChosen, candyChosen, scentChosen, dressingChosen];
       console.log(responsearray);
+      d3.json("/user_answer",{
+        method: "POST",
+        body: JSON.stringify({responses: responsearray}),
+        headers: {
+          "content-type": "application/json"
+        }
+      }).then(response => {
+        console.log(response)})
     }
     
     
