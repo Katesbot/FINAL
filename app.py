@@ -48,6 +48,7 @@ def data2():
 @app.route('/user_answer', methods=['GET', 'POST'])
 def get_answers():
     userAnswers = []
+    results = []
     if request.method == 'POST':
         answers = request.get_json()
         for answer in answers["responses"]:
@@ -56,8 +57,10 @@ def get_answers():
 
         userAnswers = np.reshape(userAnswers, (1,-1))
         result = wine_model.predict(userAnswers)
-        return jsonify(result)
 
+        result_dict = {"Results": int(result[0])}
+        results.append(result_dict)
+    return jsonify(results)
 
 if __name__ == "__main__":
     app.run(debug=True)
