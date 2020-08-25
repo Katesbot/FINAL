@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, jsonify, request
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 import pickle
+import numpy as np
 
 app = Flask(__name__)
 
@@ -50,11 +51,12 @@ def get_answers():
     if request.method == 'POST':
         answers = request.get_json()
         for answer in answers["responses"]:
-            userAnswers.append(int(answer))
+            answer = int(answer)
+            userAnswers.append(answer)
 
-        jsonResult = jsonify(userAnswers)
-        result = wine_model.predict(jsonResult)
-        return result
+        userAnswers = np.reshape(userAnswers, (1,-1))
+        result = wine_model.predict(userAnswers)
+        return jsonify(result)
 
 
 if __name__ == "__main__":
