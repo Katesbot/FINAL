@@ -1,4 +1,4 @@
-  /* data route */
+  /* data routes */
   const wineurl = "/data";
   d3.json(wineurl).then(function(response) {
     console.log(response);
@@ -7,7 +7,10 @@
   d3.json(wineurl2).then(function(response) {
     console.log(response);
   })
-
+  const wineresponse = "/user_answer";
+  d3.json(wineresponse).then(function(response) {
+    console.log(response);
+  })
 // Import Data
     function handleSubmit() {
       d3.event.preventDefault();

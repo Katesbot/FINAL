@@ -58,7 +58,15 @@ def get_answers():
         userAnswers = np.reshape(userAnswers, (1,-1))
         result = wine_model.predict(userAnswers)
 
-        result_dict = {"Results": int(result[0])}
+        def wine_int_to_str(i):
+            switcher={
+                1:'Red',
+                2:'White',
+                3:'Rose'
+            }
+            return switcher.get(i,"Invalid response")
+        wine_type = wine_int_to_str(int(result))
+        result_dict = {"Results": wine_type}
         results.append(result_dict)
     return jsonify(results)
 
