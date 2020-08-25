@@ -31,7 +31,8 @@
       var candyChosen = d3.select("#selectCandy").node().value;
       var scentChosen = d3.select("#selectScent").node().value;
       var dressingChosen = d3.select("#selectDressing").node().value;
-      var responsearray = [genderChosen, ehtnicityChosen, loctionChosen, 
+      var ageChosen = d3.select("#ageInput").node().value;
+      var responsearray = [ageChosen, genderChosen, ehtnicityChosen, loctionChosen, 
         educationChosen, maritalChosen, chocolateChosen, cheeseChosen, 
         alcoholChosen, coffeeChosen, candyChosen, scentChosen, dressingChosen];
       console.log(responsearray);

@@ -6,7 +6,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-connection_string = "postgres:postgres@localhost:5432/MoreWineeeee"
+connection_string = "postgres:Mktiger2!@localhost:5432/MoreWineeeee"
 engine = create_engine(f'postgresql://{connection_string}')
 conn = engine.connect()
 
@@ -45,7 +45,7 @@ def data2():
     
     return jsonify(WineContent)
 
-@app.route('/user_answer', methods=['POST'])
+@app.route('/user_answer', methods=['GET', 'POST'])
 def get_answers():
     userAnswers = []
     if request.method == 'POST':
