@@ -11,14 +11,9 @@
   d3.json(wineresponse).then(function(response) {
     console.log(response);
   })
+  // var wineJson = JSON.parse(wineresponse);
+  // var wineChosen = wineJson.Results;
 // Import Data
-    function handleSubmit() {
-      d3.event.preventDefault();
-      var wineChosen = d3.select("#wineInput").node().value;
-      console.log(wineChosen);
-      d3.select("#wineInput").node().value = "";
-      buildPlot(wineChosen);
-    }
     function handleFormSubmit() {
       d3.event.preventDefault();
       var responsearray = [];
@@ -46,10 +41,11 @@
           "content-type": "application/json"
         }
       }).then(response => {
-        console.log(response)})
+        var wineselection = response[0].Results;
+        document.getElementById("winePrediction").innerHTML = wineselection;
+        buildPlot(wineselection)
+      });
     }
-    
-    
     
     function buildPlot(wineChosen) {
       d3.json(wineurl).then(function(dataWine) {
@@ -162,5 +158,4 @@
 }
   );
 }
-d3.select("#submit").on("click", handleSubmit);
 d3.select("#submit-form").on("click", handleFormSubmit);
