@@ -1,233 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="static/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Ranchers&display=swap" rel="stylesheet">
-  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-  <title>More Wineeeee</title>
-  
-</head>
-<body>
-<div class="container-fluid">
-  <header>
-    Our Title Here
-  </header>
-</div>
-
-<div class="container-fluid" id="form-container">
-  <h2>Choose your responses below to find out if Red, White, or Rose is the wine for you!</h2>
-<form>
-  <div class="form-group row" id="wineChooser"> 
-  <div class="col-md-4" style="text-align: center">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="ageInput">Age</label>
-      </div>
-      <input type="email" class="form-control" id="ageInput" placeholder="Enter Age">
-    </div>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="genderSelect">Gender</label>
-      </div>
-      <select class="custom-select" id="genderSelect">
-        <option selected>Choose your Gender</option>
-        <option value="1">Female</option>
-        <option value="2">Male</option>
-        <option value="3">Non-Binary</option>
-        <option value="4">Other/Prefer not to say</option>
-      </select>
-    </div>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="ethnicitySelect">Ethnicity</label>
-      </div>
-      <select class="custom-select" id="ethnicitySelect">
-        <option selected>Choose your Ethnicity</option>
-        <option value="1">White/Caucasian</option>
-        <option value="2">Latino or Hispanic</option>
-        <option value="3">Black or African-American</option>
-        <option value="6">Asian</option>
-        <option value="5">Two or More</option>
-        <option value="4">Other/Unknown</option>
-      </select>
-    </div>
+  <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="selectLocation">Home Location</label>
-      </div>
-      <select class="custom-select" id="selectLocation">
-        <option selected>Choose...</option>
-        <option value="1">United States of America</option>
-        <option value="3">North America/Central America (excluding USA)</option>
-        <option value="2">Europe</option>
-        <option value="5">Australia/New Zealand</option>
-        <option value="6">Asia</option>
-        <option value="4">Other/Prefer not to say</option>
-      </select>
-    </div>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="selectEducation">Education</label>
-      </div>
-      <select class="custom-select" id="selectEducation">
-        <option selected>Choose...</option>
-        <option value="7">Some High School</option>
-        <option value="4">High School Diploma or equivalent</option>
-        <option value="1">Trade School</option>
-        <option value="2">Bachelor's Degree</option>
-        <option value="3">Master's Degree</option>
-        <option value="5">Ph.D. or higher</option>
-        <option value="6">Other/Prefer not to say</option>
-      </select>
-    </div>
-  </div>
-    <div class="col-md-4" style="text-align: center">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="maritalSelect">Marital Status</label>
-        </div>
-        <select class="custom-select" id="maritalSelect">
-          <option selected>Choose...</option>
-          <option value="1">Single (Never Married)</option>
-          <option value="2">Married</option>
-          <option value="3">Divorced</option>
-          <option value="4">Other/Prefer not to say</option>
-        </select>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="selectChocolate">Chocolate</label>
-        </div>
-        <select class="custom-select" id="selectChocolate">
-          <option selected>Choose...</option>
-          <option value="1">Dark Chocolate</option>
-          <option value="2">Milk Chocolate</option>
-          <option value="3">White Chocolate</option>
-          <option value="4">I do not/can not eat chocolate</option>
-        </select>
-      </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="selectCheeese">Cheese</label>
-        </div>
-        <select class="custom-select" id="selectCheeese">
-          <option selected>Choose...</option>
-          <option value="1">Firm/Semi-firm (Cheddar, Gouda, Parmesan)</option>
-          <option value="2">Soft (Brie, Camembert, Munster)</option>
-          <option value="3">Blue-veined (Roquefort, Gorgonzola, Bleu)</option>
-          <option value="4">I don't eat cheese</option>
-        </select>
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="selectAlcohol">Alcohol</label>
-        </div>
-        <select class="custom-select" id="selectAlcohol">
-          <option selected>Choose...</option>
-          <option value="1">Whiskey/Scotch</option>
-          <option value="2">Vodka</option>
-          <option value="3">Tequila</option>
-          <option value="4">Beer</option>
-        </select>
-      </div>
-    </div>
-      <div class="col-md-4" style="text-align: center">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="selectCoffee">Coffee/Tea</label>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Ranchers&display=swap" rel="stylesheet">
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="/static/CSS/owl.carousel.css" rel="stylesheet">
+		<link href="/static/CSS/owl.theme.css" rel="stylesheet">
+		<link href="/static/CSS/owl.transitions.css" rel="stylesheet">
+    <title>More Wineeeee</title>
+  </head>
+
+	<body data-spy="scroll" data-target=".main-nav">
+		<header class="st-navbar">
+			<nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
+				<div class="container"><!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="/static/images/pinkwine.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse main-nav" id="main-nav">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="#home">Home</a></li>
+							<li><a href="#about">About</a></li>
+              <li><a href="#user-entry-form">User Entry Form</a></li>
+              <li><a href="#winePrediction">User Entry Form</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div>
+			</nav>
+		</header>
+
+		<section class="home" id="home" data-stellar-background-ratio="0.4">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="st-home-unit">
+							<div class="hero-txt">
+								<p class="hero-work">Red - White - Rose</p>
+								<h2 class="hero-title">Ready for a Wine you won't whine about?</h2>
+								<!-- <p class="hero-sub-title">We Provide Hight Quality Bootstrap Template</p> -->
+								<!-- <a href="#" class="btn btn-default btn-lg left-btn">Purchase Now</a> -->
+								<a href="#about" class="btn btn-main btn-lg">Find Out More</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mouse-icon"><div class="wheel"></div></div>
+		</section>
+
+		<section class="about" id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title st-center">
+							<h3>It's Wine O'clock Somewhere</h3>
+							<p>& we have the perfect bottle for you!</p>
+						</div>
+						<div class="row mb90">
+							<div class="col-md-6">
+								<p>Texit l, habere se indocti magnosque culpa gravioribus discedere eas indignae diogenem, praetermissum effugiendorum vult dicent, periculum dolere putat. Iucunditatem quid turbulenta patre eae depravatum talem elaborare plerisque repellere, o potiendi tuo aliter, militaris sint tranquillat liberalitati. Locus delicata divelli intemperantes audeam maximisque sitne pulcherrimum aegritudines studium. Habent inveniri fidelissimae aequi andriam laudabilis. Libido censet assiduitas quae probantur tantalo exquisitaque erunt laudatur optari. Late suapte veterum enim qui magna securi eaque proficiscuntur.</p>
+                <a href="#user-entry-form" class="btn btn-main btn-lg">Take The Quiz!</a>
+              </div>
+							<div class="col-md-6">
+								<img src="/static/images/option1.jpeg " alt="" class="img-responsive">
+							</div>
+						</div>
           </div>
-          <select class="custom-select" id="selectCoffee">
-            <option selected>Choose...</option>
-            <option value="1">Tea/coffee with a little milk &/or cream</option>
-            <option value="4">Milk &/or cream with a little tea/coffee</option>
-            <option value="2">Black (with nothing added)</option>
-            <option value="3">I do not drink coffee or tea</option>
-          </select>
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="selectCandy">Candy</label>
-          </div>
-          <select class="custom-select" id="selectCandy">
-            <option selected>Choose...</option>
-            <option value="1">Sour (Sour patch kids, Warheads, Lemonheads)</option>
-            <option value="2">Fruity (Skittles, Starburst, Jolly Ranchers)</option>
-            <option value="4">Candy Bar (Snicker, Milky way, Twix)</option>
-            <option value="3">I do not eat candy</option>
-          </select>
-        </div>
-        
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="selectScent">Scent</label>
-          </div>
-          <select class="custom-select" id="selectScent">
-            <option selected>Choose...</option>
-            <option value="1">Citrus, Floral, Herbal</option>
-            <option value="2">Wood, Tobacco, Musk</option>
-            <option value="3">Clean Linen,  Fresh Air, Seaside</option>
-            <option value="4">Cinnamon, Baked Goods, Frosting</option>
-          </select>
-        </div>
-        <div class="input-group mb-3" id="salad-dressing">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="selectDressing">Salad Dressing</label>
-          </div>
-          <select class="custom-select" id="selectDressing">
-            <option selected>Choose...</option>
-            <option value="1">Vinegar/Vinaigrettes (Balsamic, Oil & Vinegar, Italian)</option>
-            <option value="2">Sweet/Herbal/Tangy (Thousand Island, Green Goddess, French)</option>
-            <option value="3">Cream Based (Ranch, Blue cheese, Ceaser)</option>
-            <option value="4">I do not use dressing/eat salads</option>
-          </select>
         </div>
       </div>
-    </div>
-    <button id="submit-form" type="submit" class="btn btn-dark" >Form Submit</button>
-  </div>
-</form>
-</div>
+    </section>
 
+    <section class="user-entry-form" id="user-entry-form" data-stellar-background-ratio="0.4">
+      <div id="form-container" class="container-fluid">
+        <h2 class="text-center">Choose your responses below to find out if Red, White, or Rose is the wine for you!</h2>
+          
+        <form class="form-inline" id="form-inline">
+          <div class="input-group-sm mb-3"> 
+            <label for="ageInput">Age</label>
+            <input type="text" class="form-control input-sm" id="ageInput" placeholder="Enter Age">
+          </div>
 
+          <div class="input-group-sm mb-3">
+              <label for="genderSelect">Gender</label>
+              <select class="custom-select input-sm" id="genderSelect" placeholder="Choose your Gender">
+                <option selected>Choose your Gender</option>
+                <option value="1">Female</option>
+                <option value="2">Male</option>
+                <option value="3">Non-Binary</option>
+                <option value="4">Other/Prefer not to say</option>
+              </select>
+          </div>
 
-  <div class="row">
-    <div class="col-md-12" style="text-align: center">
-      <div class="well justify-content-center" style="text-align: center"></div>
-        <h1 id="winePrediction"></h1>
+          <div class="input-group-sm mb-3">
+              <label for="ethnicitySelect">Ethnicity</label>
+              <select class="custom-select input-sm" id="ethnicitySelect" placeholder="Choose your Ethnicity">
+                <option selected>Choose your Ethnicity</option>
+                <option value="1">White/Caucasian</option>
+                <option value="2">Latino or Hispanic</option>
+                <option value="3">Black or African-American</option>
+                <option value="6">Asian</option>
+                <option value="5">Two or More</option>
+                <option value="4">Other/Unknown</option>
+              </select>
+            </div>
+              
+            <div class="input-group-sm mb-3">
+                <label for="selectLocation">Home Location</label>
+                <select class="custom-select input-sm" id="selectLocation" placeholder="Choose your Home Location">
+                  <option selected>Choose your Home Location</option>
+                  <option value="1">United States of America</option>
+                  <option value="3">North America/Central America (excluding USA)</option>
+                  <option value="2">Europe</option>
+                  <option value="5">Australia/New Zealand</option>
+                  <option value="6">Asia</option>
+                  <option value="4">Other/Prefer not to say</option>
+                </select>
+            </div>
+
+            <div class="input-group-sm mb-3">
+              <label for="selectEducation">Education</label>
+              <select class="custom-select input-sm" id="selectEducation" placeholder="Choose your Education Level">
+                <option selected>Choose your Education Level</option>
+                <option value="7">Some High School</option>
+                <option value="4">High School Diploma or equivalent</option>
+                <option value="1">Trade School</option>
+                <option value="2">Bachelor's Degree</option>
+                <option value="3">Master's Degree</option>
+                <option value="5">Ph.D. or higher</option>
+                <option value="6">Other/Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="input-group-sm mb-3">
+              <label for="maritalSelect">Marital Status</label>
+              <select class="custom-select input-sm" id="maritalSelect" placeholder="Choose your Marital Status">
+                <option selected>Choose your Marital Status</option>
+                <option value="1">Single (Never Married)</option>
+                <option value="2">Married</option>
+                <option value="3">Divorced</option>
+                <option value="4">Other/Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="input-group-sm mb-3">
+              <label for="selectChocolate">Chocolate</label>
+              <select class="custom-select input-sm" id="selectChocolate" placeholder="Choose your Chocolate">
+                <option selected>Choose your Chocolate</option>
+                <option value="1">Dark Chocolate</option>
+                <option value="2">Milk Chocolate</option>
+                <option value="3">White Chocolate</option>
+                <option value="4">I do not/can not eat chocolate</option>
+              </select>
+            </div>
+                
+            <div class="input-group-sm mb-3">
+              <label for="selectCheeese">Cheese</label>
+              <select class="custom-select input-sm" id="selectCheeese" placeholder="Choose your Cheese">
+                <option selected>Choose your Cheese</option>
+                <option value="1">Firm/Semi-firm (Cheddar, Gouda, Parmesan)</option>
+                <option value="2">Soft (Brie, Camembert, Munster)</option>
+                <option value="3">Blue-veined (Roquefort, Gorgonzola, Bleu)</option>
+                <option value="4">I don't eat cheese</option>
+              </select>
+            </div>
+
+            <div class="input-group-sm mb-3">
+              <label for="selectAlcohol">Alcohol</label>
+              <select class="custom-select input-sm" id="selectAlcohol" placeholder="Choose your Alcohol">
+                <option selected>Choose your Alcohol</option>
+                <option value="1">Whiskey/Scotch</option>
+                <option value="2">Vodka</option>
+                <option value="3">Tequila</option>
+                <option value="4">Beer</option>
+              </select>
+            </div>
+
+            <div class="input-group-sm mb-3">
+              <label for="selectCoffee">Coffee/Tea</label>
+              <select class="custom-select input-sm" id="selectCoffee" placeholder="Choose your Coffee/Tea">
+                <option selected>Choose your Coffee/Tea</option>
+                <option value="1">Tea/coffee with a little milk &/or cream</option>
+                <option value="4">Milk &/or cream with a little tea/coffee</option>
+                <option value="2">Black (with nothing added)</option>
+                <option value="3">I do not drink coffee or tea</option>
+              </select>
+            </div>
+
+            <div class="input-group-sm  mb-3">
+              <label for="selectCandy">Candy</label>
+              <select class="custom-select input-sm" id="selectCandy">
+                <option selected>Choose...</option>
+                <option value="1">Sour (Sour patch kids, Warheads, Lemonheads)</option>
+                <option value="2">Fruity (Skittles, Starburst, Jolly Ranchers)</option>
+                <option value="4">Candy Bar (Snicker, Milky way, Twix)</option>
+                <option value="3">I do not eat candy</option>
+              </select>
+            </div>
+              
+            <div class="input-group-sm mb-3">
+              <label for="selectScent">Scent</label>
+              <select class="custom-select input-sm" id="selectScent">
+                <option selected>Choose...</option>
+                <option value="1">Citrus, Floral, Herbal</option>
+                <option value="2">Wood, Tobacco, Musk</option>
+                <option value="3">Clean Linen,  Fresh Air, Seaside</option>
+                <option value="4">Cinnamon, Baked Goods, Frosting</option>
+              </select>
+            </div>
+
+            <div class="input-group-sm mb-3">
+              <label for="selectDressing">Salad Dressing</label>
+              <select class="custom-select input-sm" id="selectDressing">
+                <option selected>Choose...</option>
+                <option value="1">Vinegar/Vinaigrettes (Balsamic, Oil & Vinegar, Italian)</option>
+                <option value="2">Sweet/Herbal/Tangy (Thousand Island, Green Goddess, French)</option>
+                <option value="3">Cream Based (Ranch, Blue cheese, Ceaser)</option>
+                <option value="4">I do not use dressing/eat salads</option>
+              </select>
+            </div>
+          </form>
+          <div>
+            <button id="submit-form" type="submit" class="btn btn-dark" >Form Submit</button>
+            <button id="reset-form" type="reset" value="Reset" class="btn btn-dark" >Clear Form</button>
+          </div>
+          <div id="result-message" role="alert"></div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="row justify-content-center">
-    <div class="col-md-3"  style="text-align: center">
-      <div id = "alcoholContent" style="text-align: center"></div>
-    </div>
-    <div class="col-md-6 justify-content-center" style="text-align: center">
-      <h4><b></b></h4>
-      <div id = "wineWords" style="text-align: center" class="chart--container">
-        <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref"></a>
+    <section class="winePrediction">
+      <div class="row">
+        <div class="col-md-12" style="text-align: center">
+          <div class="well justify-content-center" style="text-align: center">
+            <h1 id="winePrediction"></h1>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-3"  style="text-align: center">
-      <div id = "wineGif" style="text-align: center"></div>
-      <img src="https://media.giphy.com/media/uYcuStWfBtHnW/giphy.gif" style="width: 90%; padding-top: 18%">
-    </div>
-  </div>  
 
-  <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script type="text/javascript" src="static/app.js"></script>
+      <div class="row justify-content-center">
+        <div class="col-md-3"  style="text-align: center">
+          <div id = "alcoholContent" style="text-align: center">
+          </div>
+        </div>
 
-</body>
+        <div class="col-md-6 justify-content-center" style="text-align: center">
+          <div id = "wineWords" style="text-align: center" class="chart--container">
+            <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref"></a>
+          </div>
+        </div>
+
+        <div class="col-md-3"  style="text-align: center">
+          <div id = "wineGif" style="text-align: center"></div>
+          <img src="https://media.giphy.com/media/uYcuStWfBtHnW/giphy.gif" style="width: 90%; padding-top: 18%">
+        </div>
+      </div> 
+    </section>
+
+    <section class="clients">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <div class="section-title st-center">
+              <h3>Some Of our clients</h3>
+              <p>Avocent deditum long</p>
+            </div> -->
+            <ul class="clients-carousel">
+              <li><img src="/static/photos/client.png" class="img-responsive" alt=""></li>
+              <li><img src="/static/photos/client2.png" class="img-responsive" alt=""></li>
+              <li><img src="/static/photos/client3.png" class="img-responsive" alt=""></li>
+              <li><img src="/static/photos/client4.png" class="img-responsive" alt=""></li>
+              <li><img src="/static/photos/client5.png" class="img-responsive" alt=""></li>
+              <li><img src="/static/photos/client6.png" class="img-responsive" alt=""></li>
+              <li><img src="/static/photos/client7.png" class="img-responsive" alt=""></li>
+              <li><img src="/static/photos/client8.png" class="img-responsive" alt=""></li>
+              <li><img src="/static/photos/client9.png" class="img-responsive" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="testimonials-carousel">
+              <ul>
+                <li>
+                  <div class="testimonial">
+                    <div class="testimonial-img">
+                      <img src="/static/photos/client.jpg" alt="">
+                    </div>
+                    <blockquote>
+                      <p>Tueri tantis inter variis deterritum facta caret pleniorem, efficiat affert quiete, commodis comparat facio ponti, adolescens recta iucundius mundi nostrum viris quae utilitatibus.</p>
+                      <footer>Joseph Thompson, <cite title="Source Title">Example Inc.</cite></footer>
+                    </blockquote>
+                  </div>
+                </li>
+                <li>
+                  <div class="testimonial">
+                    <div class="testimonial-img">
+                      <img src="/static/photos/client2.jpg" alt="">
+                    </div>
+                    <blockquote>
+                      <p>Contrariis labore vetuit scaevola, contra percurri adamare efficeret quibus. Nostram consulatu mediocritatem maiorem, cyrenaicisque, quandam accedit veniat cognitioque, animadvertat accusantibus temporibus maximeque litterae.</p>
+                      <footer>Nancy Ford, <cite title="Source Title">Example Inc.</cite></footer>
+                    </blockquote>
+                  </div>
+                </li>
+                <li>
+                  <div class="testimonial">
+                    <div class="testimonial-img">
+                      <img src="/static/photos/client3.jpg" alt="">
+                    </div>
+                    <blockquote>
+                      <p>Illas, volumus prosperum. Nostras eoque statua cuius corrumpit praetor aliter quaeso propter ei, quam inducitur ruant doctiores sanguinem atomum molestiae, antiqua inculta dicent.</p>
+                      <footer>Arthur Fernandez, <cite title="Source Title">Example Inc.</cite></footer>
+                    </blockquote>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            &copy; <a href="https://www.cantothemes.com">CantoThemes</a> 2015.
+            <!-- Don't Remove/Edit this. If you remove this you don't have permission to use this template. -->
+            Designed by <a href="https://www.cantothemes.com">CantoThemes</a>
+            <!-- So Please don't remove this -->
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="/static/JS/jquery.min.js"></script>
+    <script src="/static/JS/owl.carousel.js"></script>
+    <script src="/static/JS/jquery.shuffle.modernizr.js"></script>
+		<script src="/static/JS/jquery.shuffle.js"></script>
+    <script src="/static/JS/jquery.nicescroll.min.js"></script>
+    <script src="/static/JS/jquery.stellar.js"></script>
+    <script src="/static/JS/script.js"></script>
+    <script type="text/javascript" src="/static/JS/app.js"></script>
+
+  </body>
 </html>
