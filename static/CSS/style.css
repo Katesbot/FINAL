@@ -223,6 +223,26 @@
     -webkit-transition: color 0.3s, background-color 0.3s, border-color 0.3s;
             transition: color 0.3s, background-color 0.3s, border-color 0.3s;
   }
+
+  #myBtn {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 30px; 
+    z-index: 99;
+    border: none; 
+    outline: none; 
+    background-color: transparent; 
+    color: #4c4c4c;
+    cursor: pointer;
+    padding: 15px; 
+    border-radius: 10px; 
+    font-size: 18px; 
+  }
+  
+  #myBtn:hover {
+    background-color: #4ecdc4; 
+  }
   .btn.btn-lg {
     padding: 10px 35px;
     letter-spacing: 2px;
@@ -502,13 +522,10 @@
   .home .hero-txt .hero-work:after {
     content: "";
     display: block;
-    width: 200px;
+    width: auto;
     height: 4px;
     margin: 20px auto 0;
     background-color: transparent;
-    border-width: 1px 0;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.3);
   }
   .home .hero-txt a.btn {
     text-transform: uppercase;
@@ -530,10 +547,17 @@
     color: #4ecdc4;
   }
   .navbar-default {
-    background-color: transparent;
+    background-image: url(/static/images/pinkwine.jpeg);
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000;
+    padding: 50px 0;
+    position: relative;
     border-width: 0;
     margin-bottom: 0 !important;
-    height: 102px;
+    height: 80px;
     -webkit-transition: background-color 0.3s, height 0.3s;
             transition: background-color 0.3s, height 0.3s;
   }
@@ -571,7 +595,6 @@
     letter-spacing: 1px;
     padding-left: 20px;
     padding-right: 20px;
-    color: rgb(255, 255, 255);
     -webkit-transition: color 0.3s, background-color 0.3s, padding 0.3s;
             transition: color 0.3s, background-color 0.3s, padding 0.3s;
   }
@@ -625,7 +648,7 @@
     background-color: #4ecdc4;
     color: #fff;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.01);
-    border-botom: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
     padding: 20px 0;
   }
   .page-breadcrumb .breadcrumb {
@@ -673,34 +696,6 @@
   }
   .about {
     padding: 100px 0;
-  }
-  
-  ul.styled-list li {
-    list-style: none;
-    padding-left: 0;
-  }
-  ul.styled-list li:before {
-    content: '\f00c';
-    font-family: 'Oswald';
-    display: inline-block;
-    margin-left: -1.5em;
-    width: 1.5em;
-    color: #4ecdc4;
-  }
-  ul.styled-list.list-caret li:before {
-    content: '\f0da';
-  }
-  ul.styled-list.list-hand li:before {
-    content: '\f0a4';
-  }
-  ul.styled-list.list-chevron li:before {
-    content: '\f054';
-  }
-  ul.styled-list.list-times li:before {
-    content: '\f00d';
-  }
-  ul.styled-list.list-star li:before {
-    content: '\f006';
   }
   .portfolio {
     padding: 100px 0 0;
