@@ -1,0 +1,33 @@
+Wine,Variety,Count
+White,Chardonnay,63
+White,Pinot Grigio,28
+White,Riesling,11
+White,Sauvignon Blanc,7
+White,Moscato,6
+White,GewArztraminer,2
+White,Chenin Blanc,1
+White,Marsanne,1
+Rose,Pinot Noir,63
+Rose,Pink Moscato,42
+Rose,White Zinfandel,33
+Rose,Cabernet,32
+Rose,White Merlot,30
+Rose,Syrah,29
+Rose,Grenache,23
+Rose,Tempranillo,23
+Rose,Sangiovese,21
+Rose,Provence,21
+Rose,Mourvedre,9
+Rose,Tavel,7
+Red,Pinot noir,77
+Red,Cabernet sauvignon,71
+Red,Malbec,67
+Red,Merlot,63
+Red,Zinfandel,49
+Red,Syrah,45
+Red,Sangiovese,30
+Red,Cabernet Franc,22
+Red,Grenache,22
+Red,Lambrusco,15
+Red,Nebbiolo,14
+Red,Gamay,7

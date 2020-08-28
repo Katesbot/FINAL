@@ -7,6 +7,10 @@ const wineurl2 = "/data2";
 d3.json(wineurl2).then(function(response) {
   console.log(response);
 })
+const wineurl3 = "/data3";
+d3.json(wineurl3).then(function(response) {
+  console.log(response);
+})
 const wineresponse = "/user_answer";
 d3.json(wineresponse).then(function(response) { 
   console.log(response);
@@ -118,51 +122,6 @@ function basePlot() {
       }
     };
 
-    /* //create a guage with alcohol content - range is for all wines, with buffer for red/white/rose - add in types of wine?
-    var wineContent = [{wine: "White", content: .1},{wine: "Red", content: .14},{wine: "Rose", content: .7} ];
-
-    var values = [];
-
-    var content = wineContent.filter(s => s.wine === wineChosen);
-
-    content.forEach((x) => {
-      Object.entries(x).forEach(([key, value]) => {
-        if (key === "content") {
-          values.push(value);
-        }
-      });
-    });
-
-    var data = [
-      {
-        domain: { x: [0, 1], y: [0, 1] },
-        value: values[1],
-        type: "indicator",
-        mode: "gauge+number+delta",
-        gauge: {
-          axis: { range: [null, .15] },
-          steps: [
-            { range: [.07, .12], color: "#96433c" }
-          ]
-        }
-      }
-    ];
-
-    var layout = {
-      plot_bgcolor:"rgba(0,0,0,0)",
-      paper_bgcolor:"rgba(0,0,0,0)",
-      title: {
-        text:'Alcohol Content',
-        font: {
-          family: 'Courier New, monospace',
-          size: 24
-        }
-      }
-    }
- */
-    // RENDER CHARTS
-    // -----------------------------
-/*     Plotly.newPlot('alcoholContent', data, layout); */
     zingchart.render({
       id: 'wineWords',
       data: chartConfig
@@ -287,10 +246,50 @@ function buildPlot(wineChosen) {
       }
     }
 
-    // RENDER CHARTS
+    // RENDER GAUGE
     // -----------------------------
     Plotly.newPlot('alcoholContent', data, layout);
   });
+
+    // NEW CALL FOR NEXT DATASET - GUAGE CHART
+    d3.json(wineurl3).then(function(counts) {
+      var wineCounts = counts.filter(s => s.Wine === wineChosen);
+      console.log(wineCounts);
+  
+      var count = wineCounts.map(function(x) {
+        return x.Count;
+      });
+
+      console.log(count);
+
+      var variety = wineCounts.map(function(x) {
+        return x.Variety;
+      });
+
+      console.log(variety);
+  
+      var data1 = [{
+        values: count,
+        labels: variety,
+        type: 'pie'
+      }];
+  
+      var layout1 = {
+        plot_bgcolor:"rgba(0,0,0,0)",
+        paper_bgcolor:"rgba(0,0,0,0)",
+        title: {
+          text:'Most Voted Wines',
+          font: {
+            family: 'Courier New, monospace',
+            size: 24
+          }
+        }
+      }
+  
+      // RENDER PIE
+      // -----------------------------
+      Plotly.newPlot('wineCounts', data1, layout1);
+    });
 }
 
 //Get the button:

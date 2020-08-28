@@ -45,6 +45,20 @@ def data2():
     
     return jsonify(WineContent)
 
+@app.route("/data3")
+def data3():
+    winecountresults = conn.execute("SELECT * FROM winecount")
+
+    WineCount = []
+    for result in winecountresults:
+        WineCount_dict = {}
+        WineCount_dict["Wine"] = result[1]
+        WineCount_dict["Variety"] = result[2]
+        WineCount_dict["Count"] = result[3]
+        WineCount.append(WineCount_dict)
+    
+    return jsonify(WineCount)
+
 @app.route('/user_answer', methods=['GET', 'POST'])
 def get_answers():
     userAnswers = []
