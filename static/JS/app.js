@@ -122,41 +122,55 @@ function buildPlot(wineChosen) {
       }
     };
 
-    //create a guage with alcohol content - range is for all wines, with buffer for red/white/rose - add in types of wine?
-    var wineContent = [{wine: "White", content: .1},{wine: "Red", content: .14},{wine: "Rose", content: .7} ];
+    // RENDER WORD CHART
+    // -----------------------------
+    zingchart.render({
+      id: 'wineWords',
+      data: chartConfig
+    });
+  });
 
-    var values = [];
+  // NEW CALL FOR NEXT DATASET - GUAGE CHART
+  d3.json(wineurl2).then(function(content) {
+    var wineContent = content.filter(s => s.Wine === wineChosen);
+    console.log(wineContent);
 
-    var content = wineContent.filter(s => s.wine === wineChosen);
-
-    content.forEach((x) => {
-      Object.entries(x).forEach(([key, value]) => {
-        if (key === "content") {
-          values.push(value);
-        }
-      });
+    var min = wineContent.map(function(x) {
+      return x.Min;
     });
 
+    var max = wineContent.map(function(x) {
+      return x.Max;
+    });
+
+    var average = wineContent.map(function(x) {
+      return x.Average;
+    });
+
+    console.log(average);
+
     var data = [
-      {
-        domain: { x: [0, 1], y: [0, 1] },
-        value: values[1],
-        type: "indicator",
-        mode: "gauge+number+delta",
-        gauge: {
-          axis: { range: [null, .15] },
-          steps: [
-            { range: [.07, .12], color: "#96433c" }
-          ]
-        }
-      }
-    ];
+        {
+          domain: { x: [0, 20], y: [0, 1] },
+          value: average[0],
+          type: "indicator",
+          mode: "gauge+number",
+          gauge: {
+            axis: { range: [null, 20] },
+            bar: { color: "#eb3446" },
+            steps: [
+              { range: [5, 15], color: "#750a02" },
+              { range: [min[0], max[0]], color: "#fac4c0" }
+            ],
+          },
+          
+        }];
 
     var layout = {
       plot_bgcolor:"rgba(0,0,0,0)",
       paper_bgcolor:"rgba(0,0,0,0)",
       title: {
-        text:'Alcohol Content',
+        text:'Alcohol Content %',
         font: {
           family: 'Courier New, monospace',
           size: 24
@@ -167,10 +181,6 @@ function buildPlot(wineChosen) {
     // RENDER CHARTS
     // -----------------------------
     Plotly.newPlot('alcoholContent', data, layout);
-    zingchart.render({
-      id: 'wineWords',
-      data: chartConfig
-    });
   });
 }
 d3.select("#submit-form").on("click", handleFormSubmit);

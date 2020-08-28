@@ -6,7 +6,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-connection_string = "postgres:Mktiger2!@localhost:5432/MoreWineeeee"
+connection_string = "postgres:postgres@localhost:5432/MoreWineeeee"
 engine = create_engine(f'postgresql://{connection_string}')
 conn = engine.connect()
 
@@ -32,15 +32,15 @@ def data():
 
 @app.route("/data2")
 def data2():
-    winecontentresults = conn.execute("SELECT * FROM winecontent")
+    winecontentresults = conn.execute("SELECT * FROM alcoholcontent")
 
     WineContent = []
     for result in winecontentresults:
         WineContent_dict = {}
-        WineContent_dict["Type"] = result[1]
-        WineContent_dict["Content"] = result[2]
-        WineContent_dict["Low"] = result[3]
-        WineContent_dict["High"] = result[4]
+        WineContent_dict["Wine"] = result[1]
+        WineContent_dict["Min"] = result[2]
+        WineContent_dict["Max"] = result[3]
+        WineContent_dict["Average"] = result[4]
         WineContent.append(WineContent_dict)
     
     return jsonify(WineContent)
