@@ -519,6 +519,12 @@
     font-family: "Tangerine";
     font-size: 100px;
     color: #4ecdc4 !important;
+    padding: 50px 0 0 0;
+  }
+  #questionlabel {
+    font-family: "Raleway" !important;
+    font-size: 30px !important;
+    color: #4ecdc4 !important;
   }
   .home .hero-txt .hero-work:after {
     content: "";
