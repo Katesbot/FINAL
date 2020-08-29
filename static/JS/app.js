@@ -17,7 +17,7 @@ d3.json(wineresponse).then(function(response) {
 })
 
 // Import Data
-//Form subimssion & sending response to app.py for ML 
+//Form subimssion & sending response to app.py for Machine Learning
 function handleFormSubmit() {
   d3.event.preventDefault();
   var responsearray = [];
