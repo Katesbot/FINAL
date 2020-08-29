@@ -66,6 +66,7 @@ function handleFormClear() {
   document.getElementById("#selectDressing").reset();
   document.getElementById("#ageInput").reset();
 }
+
 //build visualizations 
 function basePlot() {
   d3.json(wineurl).then(function(dataWine) {
