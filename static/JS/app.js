@@ -94,7 +94,7 @@ function basePlot() {
         ignore: ['&', 'and', 'very', 'is', 'wine', 'often', 'with', 'thats', 'usually','Usually','than','of','wines','wine', 'make', 'notes', 'full', 'flavors', 'flavours', 'tannin', 'from'],
         maxItems: 50,
         minLength: '4px',
-        palette: ["#fae0de","#fcd0cc","#f7bab5","#96433c","#99382f","#9e1a7b","#b51f12","#a61307","#c41406","#ab271d"],
+        palette: ["#4ecdc4","#cb30a6","#f6b9c0","#e75e78","#CB3059","#E7885E","#E75EBD","#f5c0e4","#4c4c4c","#000000"],
         rotate: true,
         style: {
           tooltip: {
@@ -162,7 +162,7 @@ function buildPlot(wineChosen) {
         ignore: ['&', 'and', 'very', 'is', 'wine', 'often', 'with', 'thats', 'usually','Usually','than','of','wines','wine', 'make', 'notes', 'full', 'flavors', 'flavours', 'tannin', 'from'],
         maxItems: 50,
         minLength: '4px',
-        palette: ["#fae0de","#fcd0cc","#f7bab5","#96433c","#99382f","#9e1a7b","#b51f12","#a61307","#c41406","#ab271d"],
+        palette: ["#4ecdc4","#cb30a6","#f6b9c0","#e75e78","#CB3059","#E7885E","#E75EBD","#f5c0e4","#4c4c4c","#000000"],
         rotate: true,
         style: {
           tooltip: {
@@ -225,9 +225,9 @@ function buildPlot(wineChosen) {
           mode: "gauge+number",
           gauge: {
             axis: { range: [null, 20] },
-            bar: { color: "#eb3446" },
+            bar: { color: "#4ecdc4" },
             steps: [
-              { range: [5, 15], color: "#750a02" },
+              { range: [5, 15], color: "#cb30a6" },
               { range: [min[0], max[0]], color: "#fac4c0" }
             ],
           },
@@ -240,8 +240,9 @@ function buildPlot(wineChosen) {
       title: {
         text:'Alcohol Content %',
         font: {
-          family: 'Courier New, monospace',
-          size: 24
+          family: 'Tangerine',
+          size: 36,
+          color: "#cb30a6"
         }
       }
     }
@@ -271,17 +272,22 @@ function buildPlot(wineChosen) {
       var data1 = [{
         values: count,
         labels: variety,
-        type: 'pie'
+        textinfo: 'none',
+        type: 'pie',
+        marker: {
+          colors: ["#4ecdc4","#cb30a6","#F4AB26","#C2C0BE","#f6b9c0","#33B5AC","#CB3059","#E75EBD","#4c4c4c","#e75e78","#f5c0e4","#E99416"]
+        },
       }];
   
       var layout1 = {
         plot_bgcolor:"rgba(0,0,0,0)",
         paper_bgcolor:"rgba(0,0,0,0)",
         title: {
-          text:'Most Voted Wines',
+          text:`Most Voted ${wineChosen} Wines`,
           font: {
-            family: 'Courier New, monospace',
-            size: 24
+            family: 'Tangerine',
+            size: 36,
+            color: "#cb30a6"
           }
         }
       }

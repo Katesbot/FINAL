@@ -518,6 +518,7 @@
   .winePrediction {
     font-family: "Tangerine";
     font-size: 100px;
+    color: #4ecdc4 !important;
   }
   .home .hero-txt .hero-work:after {
     content: "";
