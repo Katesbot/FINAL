@@ -225,7 +225,7 @@ function buildPlot(wineChosen) {
           type: "indicator",
           mode: "gauge+number",
           gauge: {
-            axis: { range: [null, 20] },
+            axis: { range: [5, 15] },
             bar: { color: "#4ecdc4" },
             steps: [
               { range: [5, 15], color: "#cb30a6" },
@@ -238,11 +238,15 @@ function buildPlot(wineChosen) {
     var layout = {
       plot_bgcolor:"rgba(0,0,0,0)",
       paper_bgcolor:"rgba(0,0,0,0)",
+      font: {
+        family: 'Oswald',
+        color: "#cb30a6"
+      },
       title: {
-        text:'Alcohol Content %',
+        text:`${wineChosen} Wine Alc% ${min}%-${max}% Average%:`,
         font: {
           family: 'Tangerine',
-          size: 36,
+          size: 30,
           color: "#cb30a6"
         }
       }
