@@ -9,10 +9,11 @@
  * This theme under "Attribution-NonCommercial CC BY-NC". You can't remove footer credit link.
  */
  body {
-    font-family: "Open Sans";
+    font-family: "Raleway";
+    text-justify: inter-word;
     color: #808080;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 800;
+    font-size: 20px;
     line-height: 26px;
     word-spacing: 2px;
     -webkit-font-smoothing: antialiased;
@@ -714,18 +715,6 @@
   .about {
     padding: 100px 0;
   }
-  .portfolio {
-    padding: 100px 0 0;
-  }
-  .filter {
-    text-align: center;
-  }
-  .filter .btn {
-    font-weight: 400;
-  }
-  .filter input[type="radio"] {
-    display: none;
-  }
   .clients {
     padding: 100px 0;
   }
@@ -805,25 +794,9 @@
     padding: 0;
     display: block;
   }
-  .subscribe-form .form-control {
-    border-radius: 30px 2px 2px 30px !important;
-    padding: 14px 20px 14px 30px !important;
-  }
   .input-group .form-control {
     border-radius: 30px 2px 2px 30px !important;
     padding: 14px 20px 14px 30px !important;
-  }
-  @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    a.social:hover {
-      padding: 8px 20px 8px 65px;
-    }
-  }
-  .contact {
-    padding: 120px 0;
-  }
-  .contact form input,
-  .contact form textarea {
-    margin-bottom: 30px;
   }
   input[type="text"].formFieldError,
   input[type="email"].formFieldError,
@@ -851,20 +824,5 @@
     .st-navbar-mini .navbar-default .navbar-nav > li > a {
       padding-top: 20px;
       padding-bottom: 20px;
-    }
-  }
-  @media (min-width: 1440px) {
-    .grid {
-      width: 100%;
-      padding: 0;
-    }
-    .grid figure {
-      position: relative;
-      float: left;
-      overflow: hidden;
-      background: #000;
-      text-align: center;
-      cursor: pointer;
-      width: 25%;
     }
   }
